@@ -6,26 +6,8 @@
 
 """
 This code is based on https://github.com/matterport/Mask_RCNN/blob/v2.1/samples/balloon/balloon.py
-I retrained my model with photos of plate annotations.
+I re-trained my model with photos of car plate annotations.
 
-Mask R-CNN
-Train on the toy Balloon dataset and implement color splash effect.
-Copyright (c) 2018 Matterport, Inc.
-Licensed under the MIT License (see LICENSE for details)
-Written by Waleed Abdulla
-------------------------------------------------------------
-Usage: import the module (see Jupyter notebooks for examples), or run from
-       the command line as such:
-    # Train a new model starting from pre-trained COCO weights
-    python3 balloon.py train --dataset=/path/to/balloon/dataset --weights=coco
-    # Resume training a model that you had trained earlier
-    python3 balloon.py train --dataset=/path/to/balloon/dataset --weights=last
-    # Train a new model starting from ImageNet weights
-    python3 balloon.py train --dataset=/path/to/balloon/dataset --weights=imagenet
-    # Apply color splash to an image
-    python3 balloon.py splash --weights=/path/to/weights/file.h5 --image=<URL or path to file>
-    # Apply color splash to video using the last weights you trained
-    python3 balloon.py splash --weights=last --video=<URL or path to file>
 """
 
 
@@ -317,8 +299,6 @@ model = MaskRCNN(mode="training", config=config,
 
 # In[9]:
 
-
-print(os.getcwd())
 model.load_weights("mask_rcnn_balloon.h5", by_name=True)
 
 
