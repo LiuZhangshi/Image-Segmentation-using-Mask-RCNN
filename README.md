@@ -53,7 +53,7 @@ Use model.detect and display_instances functions the author provided
 
 Enjoy!
 
-![alt text](Zhangshi⁩/Users⁩/⁨liuzhangshi/⁨Downloads/example.png⁩)
+![alt text](example.png)
 
 Reference:
 
