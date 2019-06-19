@@ -3,11 +3,13 @@ This code is based on:
 
 https://github.com/matterport/Mask_RCNN/blob/v2.1/samples/balloon/balloon.py
 
+'''
 Mask R-CNN
 Train on the toy Balloon dataset and implement color splash effect.
 Copyright (c) 2018 Matterport, Inc.
 Licensed under the MIT License (see LICENSE for details)
 Written by Waleed Abdulla
+'''
 
 I used Matterport's COCO model and the Balloon example as my base model. Then built my new model to detect car plate by tranfer learning. Here are the main procedures I did:
 
