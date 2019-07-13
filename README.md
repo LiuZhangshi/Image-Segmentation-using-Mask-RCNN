@@ -11,7 +11,7 @@ Licensed under the MIT License (see LICENSE for details)
 Written by Waleed Abdulla
 '''
 
-I used Matterport's COCO model and the Balloon example as my base model. Then built my new model to detect car plate by tranfer learning. Here are the main procedures I did:
+I used Matterport's COCO model and the Balloon example as my base model. Then retrained my new model to detect car plate by tranfer learning. Here are the main procedures I did:
 
 1. Prepare my own dataset
 
