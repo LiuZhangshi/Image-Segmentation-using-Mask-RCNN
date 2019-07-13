@@ -18,51 +18,6 @@
 # 
 # 
 
-# "Mask R-CNN (regional convolutional neural network) is a two stage framework: the first stage scans the image and generates proposals(areas likely to contain an object). And the second stage classifies the proposals and generates bounding boxes and masks."
-# 
-# Mask-RCNN consists of the following modules:
-# 1. Backbone: 
-# 
-#    1.1 ResNet: ResNet CNN for feature extraction, early layers for edges/corners and later layers for person/sky/car/... Passing throught the backbone, the image is converted from 1024x1024x3 to 32x32x2048
-#    
-#    1.2 Feature Pyramid Network: The FPN is used as the ResNet extension, which can better represent objects at multiple scales. "Faster R-CNN with an FPN backbone extracts RoI features from different levels of the feature pyramid according to their scale. Using a ResNet-FPN backbone for feature extraction with Mask RCNNgives excellent gains in both accuracy and speed." It allows features at every level to have access to both, lower and higher level features.
-# 
-# 2. Region Proposal Network (RPN): The RPN is a lightweight neural network that scans the image in a sliding-window fashion and finds areas that contain objects. RPN doesn’t scan over the image directly (even though we draw the anchors on the image for illustration). Instead, the RPN scans over the backbone feature map. The RPN generates 2 outputs for each anchor: Anchor class and bounding box refinement.
-# 
-#     Anchor Class: one of the two classes: foreground and background. Foreground class implies a possible object in that box.
-#     
-#     Bounding box refinement: RPN estimate a delta to refine the anchor box to fit the object better.
-#     
-#     If several anchors overlap too much, we keep the one with the highest foreground score and discard the rest (referred to as Non-max Suppression). After that we have the final proposals (regions of interest) that we pass to the next stage.
-#     
-# 3. ROI Classifier and Bounding Box Regressor: It generate 2 outputs
-#     
-#     Class of the object in the ROI
-#     
-#     Bounding Box Refinement
-#     
-#     ROI pooling refers to cropping a part of a feature map and resizing it to a fixed size. This enables ROI to have various sizes as inputs for classifier.
-#     
-# 4. Segmentation Masks
-# 
-#     The mask branch is a convolutional network that takes the positive regions selected by the ROI classifier and generates masks for them. During training, we scale down the ground-truth masks to 28x28 to compute the loss, and during inferencing we scale up the predicted masks to the size of the ROI bounding box and that gives us the final masks, one per object.
-# 
-# 
-
-# Object detection is a challenging problem that involves object recognition (e.g. where are they), object localization (e.g. what are their extent), and object classification (e.g. what are they).
-# 
-# R-CNN: Bounding boxes are proposed by the “selective search” algorithm, each of which is stretched and features are extracted via a deep convolutional neural network, such as AlexNet, before a final set of object classifications are made with linear SVMs.
-# 
-# Fast R-CNN: Simplified design with a single model, bounding boxes are still specified as input, but a region-of-interest pooling layer is used after the deep CNN to consolidate regions and the model predicts both class labels and regions of interest directly.
-# 
-# Faster R-CNN: Addition of a Region Proposal Network that interprets features extracted from the deep CNN and learns to propose regions-of-interest directly.
-# 
-# Mask R-CNN: Extension of Faster R-CNN that adds an output model for predicting a mask for each detected object.
-# 
-# "The Region-based CNN (R-CNN) approach to bounding-box object detection is to attend to a manageable number of candidate object regions and evaluate convolutional networks independently on each RoI. R-CNN was extended to allow attending to RoIs on feature maps using RoIPool, leading to fast speed and better accuracy. Faster R-CNN advanced this stream by learning the attention mechanism with a Region Proposal Network (RPN). Faster R-CNN is flexible and robust to many follow-up improvements, and is the current leading framework in several benchmarks."
-# 
-# 
-
 # In[ ]:
 
 
