@@ -13,6 +13,14 @@ Written by Waleed Abdulla
 
 I used Matterport's COCO model and the Balloon example as my base model. Then retrained my new model to detect car plate by tranfer learning. Here are the main procedures I did:
 
+0. Prerequisite
+
+In order to run the code, you need to first clone or download the Matterport's repositories at:
+
+https://github.com/matterport/Mask_RCNN
+
+and read installation information to install the setup.py file.
+
 1. Prepare my own dataset
 
 Since you have your own specific detection goals, you need to prepare your dataset from scratch instead of simply downloading from some websites. Here's what I did:
