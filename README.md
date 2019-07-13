@@ -15,11 +15,13 @@ I used Matterport's COCO model and the Balloon example as my base model. Then re
 
 0. Prerequisite
 
-In order to run the code, you need to first clone or download the Matterport's repositories at:
+0.1 In order to run the code, you need to first clone or download the Matterport's repositories at:
 
 https://github.com/matterport/Mask_RCNN
 
 and read installation information to install the setup.py file.
+
+0.2 Download the pre-trained weights file "mask_rcnn_balloon.h5" or "mask_rcnn_coco.h5" as your initial weights.
 
 1. Prepare my own dataset
 
