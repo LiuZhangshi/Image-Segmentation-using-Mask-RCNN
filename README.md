@@ -11,6 +11,12 @@ Licensed under the MIT License (see LICENSE for details)
 Written by Waleed Abdulla
 '''
 
+"Mask R-CNN (regional convolutional neural network) is a two stage framework: the first stage scans the image and generates proposals(areas likely to contain an object). And the second stage classifies the proposals and generates bounding boxes and masks."
+
+In the first stage, FaceNet uses Backbone, which consists of ResNet and a Feature Pyramid Network, to extract features in the image. Then it uses region proposal network to find areas that has an object.
+
+In the second stage, it uses ROI Classifier and Bounding Box Regressor to generate the Class of the object and do Bounding Box Refinement. Then uses the mask branch, which is a convolutional network that takes the positive regions selected by the ROI classifier, to generates masks for the objects.
+
 I used Matterport's COCO model and the Balloon example as my base model. Then retrained my new model to detect car plate by tranfer learning. Here are the main procedures I did:
 
 0. Prerequisite
